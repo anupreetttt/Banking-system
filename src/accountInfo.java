@@ -6,6 +6,12 @@ public class accountInfo {
     private int balance;
     private int number;
 
+
+    public void deposit(int value){
+        this.balance += value;
+        System.out.println("Deposit of " + value + " has been made. New balance is " + balance );
+
+    }
     public void setName(String name1){
         this.name = name1;
     }
