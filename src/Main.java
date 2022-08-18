@@ -26,30 +26,34 @@ public class Main {
         customerInfo.setacctNum(acctNum1);
         customerInfo.setBalance(balance1);
         customerInfo.setnumber(number1);
-
-        System.out.println("Select one one of the options: ");
-        System.out.println("1. Deposit funds: ");
-        System.out.println("2. Withdraw funds: ");
-        System.out.println("3. To view balance: ");
-        int option = scanner.nextInt();
-        if(option == 1 || option == 2 || option == 3) {
-        switch (option) {
-            case 1:
-                System.out.println("Please enter the value you want to deposit: ");
-                int depoValue = scanner.nextInt();
-                customerInfo.deposit(depoValue);
+        while (true) {
+            System.out.println("Select one one of the options: ");
+            System.out.println("1. Deposit funds: ");
+            System.out.println("2. Withdraw funds: ");
+            System.out.println("3. To view balance: ");
+            System.out.println("4. To exit.");
+            int option = scanner.nextInt();
+            if (option == 1 || option == 2 || option == 3) {
+                switch (option) {
+                    case 1:
+                        System.out.println("Please enter the value you want to deposit: ");
+                        int depoValue = scanner.nextInt();
+                        customerInfo.deposit(depoValue);
+                        break;
+                    case 2:
+                        System.out.println("Please enter the value you want to withdraw: ");
+                        int withDraw = scanner.nextInt();
+                        customerInfo.withdraw(withDraw);
+                        break;
+                    case 3:
+                        System.out.println("Your current balance is: " + customerInfo.getBalance());
+                        break;
+                }
+            } else if (option == 4){
                 break;
-            case 2:
-                System.out.println("Please enter the value you want to withdraw: ");
-                int withDraw = scanner.nextInt();
-                customerInfo.withdraw(withDraw);
-                break;
-            case 3:
-                System.out.println("Your current balance is: " + customerInfo.getBalance());
-                break;
-        }
-        } else {
-            System.out.println("Please enter 1 or 2.");
+            }else {
+                System.out.println("Please enter 1 or 2.");
+            }
         }
     }
 }
