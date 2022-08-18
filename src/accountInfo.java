@@ -10,7 +10,15 @@ public class accountInfo {
     public void deposit(int value){
         this.balance += value;
         System.out.println("Deposit of " + value + " has been made. New balance is " + balance );
+    }
 
+    public void withdraw(int value) {
+        if(balance - value <=0) {
+            System.out.println("Insufficient funds.");
+        } else {
+            this.balance -=value;
+            System.out.println("Withdrawal of " + value + " has been made. Remaining amount is: " + balance);
+        }
     }
     public void setName(String name1){
         this.name = name1;

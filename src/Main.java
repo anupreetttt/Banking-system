@@ -36,15 +36,16 @@ public class Main {
             case 1:
                 System.out.println("Please enter the value you want to deposit: ");
                 int depoValue = scanner.nextInt();
-//                customerInfo.deposit(depoValue);
-
                 customerInfo.deposit(depoValue);
                 break;
             case 2:
+                System.out.println("Please enter the value you want to withdraw: ");
+                int withDraw = scanner.nextInt();
+                customerInfo.withdraw(withDraw);
+                break;
+            case 3:
                 System.out.println(customerInfo.getBalance());
                 break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + option);
         }
         } else {
             System.out.println("Please enter 1 or 2.");
