@@ -30,8 +30,9 @@ public class Main {
         System.out.println("Select one one of the options: ");
         System.out.println("1. Deposit funds: ");
         System.out.println("2. Withdraw funds: ");
+        System.out.println("3. To view balance: ");
         int option = scanner.nextInt();
-        if(option == 1 || option == 2) {
+        if(option == 1 || option == 2 || option == 3) {
         switch (option) {
             case 1:
                 System.out.println("Please enter the value you want to deposit: ");
@@ -44,7 +45,7 @@ public class Main {
                 customerInfo.withdraw(withDraw);
                 break;
             case 3:
-                System.out.println(customerInfo.getBalance());
+                System.out.println("Your current balance is: " + customerInfo.getBalance());
                 break;
         }
         } else {
